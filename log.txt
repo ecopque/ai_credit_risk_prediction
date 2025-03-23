@@ -1,0 +1,3 @@
+# FILE: /log.txt
+
+#10: If there are categorical variables (such as gender, education, marital status, etc), code them.
