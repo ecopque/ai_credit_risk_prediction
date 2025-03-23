@@ -51,7 +51,18 @@ df[['LIMIT_BAL', 'AGE']] = scaler.fit_transform(df[['LIMIT_BAL', 'AGE']]) #11:
 x = df.drop('default payment next month', axis=1) #12:
 y = df['default payment next month'] #12:
 # [3.4.1. Spliting]:
-X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42) #13:
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42) #13:
 
 # [4. MODELING]
-# 
+# [4.1. Choose a model]:
+model = RandomForestClassifier(random_state=42) #14:
+model.fit(x_train, y_train) #14:
+
+# [4.2. Evaluate the model]:
+y_pred = model.predict(x_test) #15:
+
+# [4.2.1. Classification report]:
+print(classification_report(y_test, y_pred)) #16:
+
+# [4.2.2. Confusion matrix]:
+print(confusion_matrix(y_test, y_pred)) #17:

@@ -5,3 +5,5 @@
 #11: Normalize or standardize numeric variables so that they have the same scale.
 #12: Separate the data into independente (x) and dependent (y) variables.
 #13: Split data into training and testing.
+#14: Let's use RandomForestClassifier to predict default.
+#15: Use metrics such as accuracy, precision, recall, and F1-score to evaluate model performance.
