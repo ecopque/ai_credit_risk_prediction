@@ -25,11 +25,17 @@ The project follows these steps:
 ## Project Structure
 ```
 credit_card_analysis/
-├── credit_card_analysis.py # Main analysis script
-├── default of credit card clients.xls # Dataset
+├── credit_card_analysis.py       # Main analysis script
+├── default of credit card clients.xls  # Dataset
 ├── credit_card_default_model.pkl # Saved trained model
-├── README.md # Project documentation
-└── requirements.txt # Project dependencies
+├── README.md                     # Project documentation
+├── requirements.txt              # Project dependencies
+├── log.txt                       # Log file for tracking script execution
+├── images/                       # Folder containing visualizations
+│   ├── feature_importance.png    # Feature importance plot
+│   └── confusion_matrix.png      # Confusion matrix plot
+│   └── others                    # Other images
+└── venv/                         # Virtual environment folder (optional)
 ```
 
 ## Results
