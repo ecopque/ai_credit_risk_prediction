@@ -75,12 +75,19 @@ scores = cross_val_score(model, x, y, cv=5, scoring='accuracy') #18:
 print(f'Average accuracy with cross-validation: {scores.mean()}') #18:
 
 # [4.4. Hyperparameter tuning (optional)]: #19:
-param_grid = {
-    'n_estimators': [100, 200, 300],
-    'max_depth': [None, 10, 20],
-    'min_samples_split': [2, 5, 10]
-}
+# param_grid = {
+#     'n_estimators': [100, 200, 300],
+#     'max_depth': [None, 10, 20],
+#     'min_samples_split': [2, 5, 10]
+# }
 
-grid_search = GridSearchCV(estimator=model, param_grid=param_grid, cv=5, scoring='accuracy')
-grid_search.fit(x_train, y_train)
-print(f"Best parameters: {grid_search.best_params_}")
+# grid_search = GridSearchCV(estimator=model, param_grid=param_grid, cv=5, scoring='accuracy')
+# grid_search.fit(x_train, y_train)
+# print(f"Best parameters: {grid_search.best_params_}")
+
+#   [5. SAVING MODEL]
+# [5.1. Savind the trained model]:
+joblib.dump(model, 'credit_card_default_model.pkl') #20:
+
+# [5.2. Load the model]:
+model = joblib.load('credit_card_default_model.pkl') #21:
