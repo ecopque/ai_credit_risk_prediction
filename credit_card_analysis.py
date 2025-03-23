@@ -93,3 +93,10 @@ joblib.dump(model, 'credit_card_default_model.pkl') #20:
 model = joblib.load('credit_card_default_model.pkl') #21:
 
 #   [6. VIEWING RESULTS]
+# [6.1. Create charts]:
+importances = model.feature_importances_
+feature_names = x.columns
+
+sns.barplot(x=importances, y=feature_names)
+plt.title('Importance of Variables')
+plt.show()
