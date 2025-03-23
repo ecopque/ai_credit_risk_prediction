@@ -94,9 +94,14 @@ model = joblib.load('credit_card_default_model.pkl') #21:
 
 #   [6. VIEWING RESULTS]
 # [6.1. Create charts]:
-importances = model.feature_importances_
-feature_names = x.columns
+importances = model.feature_importances_ #22:
+feature_names = x.columns #22:
 
-sns.barplot(x=importances, y=feature_names)
-plt.title('Importance of Variables')
+sns.barplot(x=importances, y=feature_names) #23:
+plt.title('Importance of Variables') #23:
+plt.show()
+
+# [6.2. Confusion Matrix]:
+sns.heatmap(confusion_matrix(y_test, y_pred), annot=True, fmt='d') #24:
+plt.title('Confusion Matrix')
 plt.show()
