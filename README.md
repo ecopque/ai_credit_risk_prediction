@@ -37,9 +37,11 @@ credit_card_analysis/
 The model achieved an average accuracy of **81.7%** with cross-validation. However, the recall for class 1 (defaulters) was **36%**, indicating that the model struggles to correctly identify customers who will default. Below are some visualizations generated:
 
 1. **Feature Importance**:
+
    ![Feature Importance](https://github.com/ecopque/ai_credit_risk_prediction/blob/main/prints/Screenshot%20from%202025-03-23%2019-47-38.png)
 
 2. **Confusion Matrix**:
+
    ![Confusion Matrix](https://github.com/ecopque/ai_credit_risk_prediction/blob/main/prints/Screenshot%20from%202025-03-23%2019-57-24.png)
 
 ## Developer Info
