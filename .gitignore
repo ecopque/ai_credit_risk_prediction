@@ -161,6 +161,7 @@ nginx-https.env
 *.mm
 .mm
 step_by_step.txt
+credit_card_default_model.pkl
 
 
 # Edson Copque | https://linktr.ee/edsoncopque

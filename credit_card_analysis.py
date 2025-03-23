@@ -91,3 +91,5 @@ joblib.dump(model, 'credit_card_default_model.pkl') #20:
 
 # [5.2. Load the model]:
 model = joblib.load('credit_card_default_model.pkl') #21:
+
+#   [6. VIEWING RESULTS]
