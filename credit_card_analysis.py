@@ -74,7 +74,7 @@ print(confusion_matrix(y_test, y_pred)) #17:
 scores = cross_val_score(model, x, y, cv=5, scoring='accuracy') #18:
 print(f'Average accuracy with cross-validation: {scores.mean()}') #18:
 
-# [4.4. Hyperparameter tuning (optional)]:
+# [4.4. Hyperparameter tuning (optional)]: #19:
 param_grid = {
     'n_estimators': [100, 200, 300],
     'max_depth': [None, 10, 20],
@@ -83,4 +83,4 @@ param_grid = {
 
 grid_search = GridSearchCV(estimator=model, param_grid=param_grid, cv=5, scoring='accuracy')
 grid_search.fit(x_train, y_train)
-print(f"Melhores parâmetros: {grid_search.best_params_}")
+print(f"Best parameters: {grid_search.best_params_}")
