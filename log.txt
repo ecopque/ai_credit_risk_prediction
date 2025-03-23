@@ -1,3 +1,5 @@
 # FILE: /log.txt
 
+#9: If there are missing values, you can fill them with the mean, mode, or remove the rows.
 #10: If there are categorical variables (such as gender, education, marital status, etc), code them.
+#11: Normalize or standardize numeric variables so that they have the same scale.
