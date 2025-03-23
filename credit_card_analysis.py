@@ -1,13 +1,13 @@
 # FILE: /credit_card_analysis.py
 
-# [0. DATABASE]
+#   [0. DATABASE]
 # Link: https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients #1:
 
-# [1. ENVIRONMENT CONFIGURATION]
+#   [1. ENVIRONMENT CONFIGURATION]
 # Required libs:
 # $pip install pandas numpy scikit-learn matplotlib seaborn xlrd openpyxl joblib #2:
 
-# [2. DATA IMPORT AND EXPLORATION]
+#   [2. DATA IMPORT AND EXPLORATION]
 # [2.1. Importing libraries]: #3:
 import pandas as pd
 import numpy as np
@@ -18,6 +18,9 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix
 import joblib
+
+from sklearn.model_selection import cross_val_score #18:
+from sklearn.model_selection import GridSearchCV #19:
 
 # [2.2. Loading the data]
 # [2.2.1. Upload the xls file]:
@@ -36,7 +39,7 @@ print(df.isnull().sum()) #7:
 # [2.3.4. Descriptive statistics]:
 print(df.describe()) #8:
 
-# [3. DATA CLEANING AND PROCESSING]
+#   [3. DATA CLEANING AND PROCESSING]
 # [3.1. Handle missing values]:
 df.fillna(df.mean(), inplace=True) #9:
 
@@ -53,7 +56,7 @@ y = df['default payment next month'] #12:
 # [3.4.1. Spliting]:
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42) #13:
 
-# [4. MODELING]
+#   [4. MODELING]
 # [4.1. Choose a model]:
 model = RandomForestClassifier(random_state=42) #14:
 model.fit(x_train, y_train) #14:
@@ -66,3 +69,18 @@ print(classification_report(y_test, y_pred)) #16:
 
 # [4.2.2. Confusion matrix]:
 print(confusion_matrix(y_test, y_pred)) #17:
+
+# [4.3. Cross-validation]:
+scores = cross_val_score(model, x, y, cv=5, scoring='accuracy') #18:
+print(f'Average accuracy with cross-validation: {scores.mean()}') #18:
+
+# [4.4. Hyperparameter tuning (optional)]:
+param_grid = {
+    'n_estimators': [100, 200, 300],
+    'max_depth': [None, 10, 20],
+    'min_samples_split': [2, 5, 10]
+}
+
+grid_search = GridSearchCV(estimator=model, param_grid=param_grid, cv=5, scoring='accuracy')
+grid_search.fit(x_train, y_train)
+print(f"Melhores parâmetros: {grid_search.best_params_}")
