@@ -1,7 +1,14 @@
 # FILE: /credit_card_analysis.py
 
-# pip install pandas numpy scikit-learn matplotlib seaborn xlrd openpyxl joblib
+# [0. DATABASE]
+# [https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients]
 
+# [1. ENVIRONMENT CONFIGURATION]
+# [1. Required libs]:
+# $pip install pandas numpy scikit-learn matplotlib seaborn xlrd openpyxl joblib
+
+# [2. DATA IMPORT AND EXPLORATION]
+# [2. Importing libraries]:
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -12,14 +19,18 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix
 import joblib
 
-# Upload the xls file:
+# [2. Loading the data]
+# [2. Upload the xls file):
 df = pd.read_excel('default of credit card clients.xls', header=1)
 
-# Check the first few lines
+# [2. Initial data exploration]
+# [2. Check the first few lines]:
 print(df.head())
-# Information about columns and data types
+# [2. Information about columns and data types]:
 print(df.info())
-# Check for missing values
+# [2. Check for missing values]:
 print(df.isnull().sum())
-# Descriptive statistics
+# [2. Descriptive statistics]:
 print(df.describe())
+# [2. Fill missing values ​​with mean (for numeric columns)]:
+df.fillna(df.mean(), inplace=True)
