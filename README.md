@@ -50,6 +50,13 @@ The model achieved an average accuracy of **81.7%** with cross-validation. Howev
 
    ![Confusion Matrix](https://github.com/ecopque/ai_credit_risk_prediction/blob/main/prints/Screenshot%20from%202025-03-23%2019-57-24.png)
 
+3. **Others**:
+![x](https://github.com/ecopque/ai_credit_risk_prediction/blob/main/prints/Screenshot%20from%202025-03-23%2017-22-10.png)
+![x](https://github.com/ecopque/ai_credit_risk_prediction/blob/main/prints/Screenshot%20from%202025-03-23%2017-30-21.png)
+![x](https://github.com/ecopque/ai_credit_risk_prediction/blob/main/prints/Screenshot%20from%202025-03-23%2017-32-45.png)
+![x](https://github.com/ecopque/ai_credit_risk_prediction/blob/main/prints/Screenshot%20from%202025-03-23%2017-33-09.png)
+![x](https://github.com/ecopque/ai_credit_risk_prediction/blob/main/prints/Screenshot%20from%202025-03-23%2018-51-20.png)
+
 ## Developer Info
 ```
 . Developer: Edson Copque
